@@ -2,17 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>I.D.P. Cerrajero</title>
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="shortcut icon" type="image/x-icon" href="favicon-idp.png"/>
+        <title>I.D.P. Cerrajero</title>
+
+
         <!-- Bootswatch themes -->
-        <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-        
+        <link rel="stylesheet" href="static/libs/bootstrap/bootstrap.min.css">
+
         <!-- Importar Iconos -->
-        <link rel="stylesheet" href="Icons/css/all.min.css">
-        <script src="fontawesome-free-5.11.2-web/js/all.min.js"></script>
-        
+        <link rel="stylesheet" href="static/libs/icons/css/all.min.css">
+        <script src="static/libs/icons/js/all.min.js"></script>
+
+        <!-- Tus propios css -->
+        <link rel="stylesheet" href="static/css/styles.css">
+
         <!-- Global site tag (gtag.js) - Google Ads: 608246540 -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-608246540"></script>
         <script>
@@ -24,14 +29,32 @@
         <script>
             gtag('config', 'AW-608246540/MIaTCO-EmvMBEIy2hKIC', {'phone_conversion_number': '653 576 165'});
         </script>
+        <!-- Event snippet for Click en número del sitio web conversion page
+        In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+        <script>
+            function gtag_report_conversion(url) {
+                var callback = function () {
+                    if (typeof(url) != 'undefined') {
+                    window.location = url;
+                    }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-608246540/Kz-oCKOnifMBEIy2hKIC',
+                    'event_callback': callback
+                });
+                return false;
+            }
+        </script>
 
     </head>
+
     <body>
-        <div class="jumbotron jumbotron-fluid p-3 m-0 bg-primary text-white font-weight-bold shadow-sm ml-0">
+        <!-- Topbar -->
+        <div class="jumbotron jumbotron-fluid p-3 m-0 bg-primary text-white font-weight-bold shadow-sm">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                        <img class="mx-auto d-block" src="imgs/Logo_IDP.png">
+                        <img class="mx-auto d-block" src="static/imgs/Logo_IDP.png">
                     </div>
                     <div id="cabecera_num_tel" class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pt-1">
                         <h2 class="text-center text-white">653 576 165</h2>
@@ -39,39 +62,259 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row p-5 m-0">
-                <div class="col text-center p-5  m-0">
-                    <h1>Web en construcción</h1>
-                    <div class="p-5  m-0">
-                        <i class="fas fa-cog fa-spin" style="font-size:48px;"></i>
-                    </div>
-                    <h5 class="p-2">Estamos trabajando en ella,</h5>
-                    <h5 class="p-2">Vuelva pronto.</h5>
-                </div>
+
+        <!-- Contenido de la página -->
+
+        <!-- Cabecera -->
+        <div id="headerImage" class="jumbotron jumbotron-fluid py-5 m-0 bg-dark">
+            <div id="headerBox" class="container text-center py-5">
+                <h1 class="text-white">Cerrajeros profesionales en mallorca</h1><br>
+                <h5 class="text-light">Contamos con más de 15 años de experiencia en el sector</h5><br><br>
+                <a onclick="return gtag_report_conversion('tel:653576165');" href="tel:653576165" id="boton-llamar" class="btn btn-primary rounded" role="button">Llamar</a>
             </div>
         </div>
     
-        <div class="container p-5 mx-auto">
-            <div class="progress border border-secondary rounded">
-                <div class="progress-bar progress-bar-striped progress-bar-animated rounded" style="width:65%"></div>
-            </div> 
-        </div>
-        <div class="row p-5 m-0">
-                <div class="col text-center pt-5">
-                    <h5 class="pt-2">Disculpen las molestias.</h5>
+        <!-- Seccion del Mapa -->
+        <div class="container-fluid">
+            <div class="row px-5 py-3">
+                <!-- Título -->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h1 class="text-center text-dark pb-2 pt-3"> Zonas de Servicio </h1>
+                    <h5 class="text-center text-dark pb-5">Disponemos de servicio en toda la isla de Mallorca</h5>
+                    <!-- Mapa -->
+                    <div class="row pb-3">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+                            <img id="imgMallorca" class="mx-auto d-block img-fluid" src="static/imgs/zonas/MapaMallorca.png"/>
+                        </div>
+                        <!-- Lugares -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                            <div id="accordion">
+                                <div class="card">   
+                                    <div class="card-header bg-primary">   
+                                        <i class="fas fa-search-location text-white align-bottom pr-2" style="font-size:24px"></i><!-- fas fa-location-arrow -->
+                                        <a class="comarcas collapsed card-link text-white "
+                                            data-toggle="collapse" href="#serra_de_tramuntana">
+                                            Serra de Tramuntana
+                                        </a>
+                                        
+                                    </div>
+                                    <div id="serra_de_tramuntana" class="collapse" data-parent="#accordion">
+                                        <div class="card-body border border-primary rounded-bottom">
+                                            <span class="text-justify">Andratx, Banyalbufar, Bunyola, Calvià, Deià, Escorca, Esporles, 
+                                                Estellencs, Fornalutx, Pollença, Puigpunyent, Sóller, Valldemossa.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header bg-primary">
+                                        <i class="fas fa-search-location text-white align-bottom pr-2" style="font-size:24px"></i>
+                                        <a class="comarcas collapsed card-link text-white" data-toggle="collapse" href="#palma_de_mallorca">
+                                            Palma de Mallorca
+                                        </a>
+                                    </div>
+                                    <div id="palma_de_mallorca" class="collapse" data-parent="#accordion">
+                                        <div class="card-body border border-primary rounded-bottom">
+                                            <span class="text-justify">Palma.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header bg-primary">
+                                        <i class="fas fa-search-location text-white align-bottom pr-2" style="font-size:24px"></i>
+                                        <a class="comarcas collapsed card-link text-white" data-toggle="collapse" href="#comarca_del_raiguer">
+                                            Comarca del Raiguer
+                                        </a>
+                                    </div>
+                                    <div id="comarca_del_raiguer" class="collapse" data-parent="#accordion">
+                                        <div class="card-body border border-primary rounded-bottom">
+                                            <span class="text-justify">Alaró, Alcúdia, Binissalem, Búger, Campanet, Consell, Inca, Lloseta, 
+                                                Mancor de la Vall, Marratxí, Sa Pobla, Santa Maria del Camí, Selva.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header bg-primary">
+                                        <i class="fas fa-search-location text-white align-bottom pr-2" style="font-size:24px"></i>
+                                        <a class="comarcas collapsed card-link text-white" data-toggle="collapse" href="#pla_de_mallorca">
+                                            Pla de Mallorca
+                                        </a>
+                                    </div>
+                                    <div id="pla_de_mallorca" class="collapse" data-parent="#accordion">
+                                        <div class="card-body border border-primary rounded-bottom">
+                                            <span class="text-justify">Algaida, Ariany, Costitx, Lloret de Vistalegre, Llubí, Maria de la Salut, Montuïri, 
+                                                Muro, Petra, Porreres, Sant Joan, Santa Eugènia, Santa Margalida, Sineu, Vilafranca de Bonany.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header bg-primary">
+                                        <i class="fas fa-search-location text-white align-bottom pr-2" style="font-size:24px"></i>    
+                                        <a class="comarcas collapsed card-link text-white" data-toggle="collapse" href="#comarca_de_migjorn">
+                                            Comarca de Migjorn
+                                        </a>
+                                    </div>
+                                    <div id="comarca_de_migjorn" class="collapse" data-parent="#accordion">
+                                        <div class="card-body border border-primary rounded-bottom">
+                                            <span class="text-justify">Campos, Felanitx, Llucmajor, Ses Salines, Santanyí.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header bg-primary">
+                                        <i class="fas fa-search-location text-white align-bottom pr-2" style="font-size:24px"></i>
+                                        <a class="comarcas collapsed card-link text-white" data-toggle="collapse" href="#comarca_de_llevant">
+                                            Comarca de Llevant
+                                        </a>
+                                    </div>
+                                    <div id="comarca_de_llevant" class="collapse" data-parent="#accordion">
+                                        <div class="card-body border border-primary rounded-bottom">
+                                            <span class="text-justify">Artà, Capdepera, Manacor, Sant Llorenç des Cardassar, Son Servera.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </div>
+        
+        <!-- Sección de Información de Servicios -->
+        <div id="carouselBg" class="jumbotron jumbotron-fluid py-5 m-0 bg-dark">
+            <div class="container">
+                <div class="row">
+                    <!-- Carousel -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <!-- Título -->
+                        <h1 class="text-center text-white pb-3">Nuestros servicios</h1>
+                        <h5 class="text-center text-light pb-4">Realizamos numerosos servicios de cerrajería</h5>
+                        <div id="demo" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                    <li data-target="#demo" data-slide-to="1"></li>
+                                    <li data-target="#demo" data-slide-to="2"></li>
+                                    <li data-target="#demo" data-slide-to="3"></li>
+                            </ul>
+    
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active pb-5">
+                                    <div id="card-carousel" class="card mx-auto d-block border border-secondary rounded" style="width:500px"><!-- style="width:400px" -->
+                                        <img class="card-img-top img-fluid" src="static/imgs/aperturas.jpg" alt="Card image" style="width:100%">
+                                        <div class="card-body bg-light">
+                                            <h4 class="card-title text-primary">Aperturas</h4><hr>
+                                            <p class="card-text">¿La puerta no se abre? No se preocupe. <br>
+                                               Disponemos de servicio de aperturas en toda la isla. Llámanos para concertar una cita.</p>
+                                            <a href="tel:653576165" id="card-btn" class="btn btn-primary rounded mx-auto d-block" role="button">Llamar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item pb-5">
+                                    <div id="card-carousel" class="card mx-auto d-block border border-secondary rounded" style="width:500px"><!-- style="width:400px" -->
+                                        <img class="card-img-top img-fluid" src="static/imgs/urgencias.jpg" alt="Card image" style="width:100%">
+                                        <div class="card-body bg-light">
+                                            <h4 class="card-title text-primary">Servicio de Urgencias</h4><hr>
+                                            <p class="card-text">¿Se ha dejado las llaves dentro de casa? <br>
+                                               Con nuestro servicio de urgencias 24 horas podrá volver a su hogar de forma inmediata.</p>
+                                            <a href="tel:653576165" id="card-btn" class="btn btn-primary rounded mx-auto d-block" role="button">Llamar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item pb-5">
+                                    <div id="card-carousel" class="card mx-auto d-block border border-secondary rounded" style="width:500px"><!-- style="width:400px" -->
+                                        <img class="card-img-top img-fluid" src="static/imgs/cerradura_2.jpg" alt="Card image" style="width:100%">
+                                        <div class="card-body bg-light">
+                                            <h4 class="card-title text-primary">Cambio de cerraduras</h4><hr>
+                                            <p class="card-text">¿Ha perdido las llaves? ¿Ya no se siente seguro en casa?<br>
+                                               Llámenos y le cambiamos la cerradura por una completamente nueva.</p>
+                                            <a href="tel:653576165" id="card-btn" class="btn btn-primary rounded mx-auto d-block" role="button">Llamar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item pb-5">
+                                    <div id="card-carousel" class="card mx-auto d-block border border-secondary rounded" style="width:500px">
+                                        <img class="card-img-top img-fluid" src="static/imgs/mantenimiento.jpg" alt="Card image" style="width:100%">
+                                        <div class="card-body bg-light">
+                                            <h4 class="card-title text-primary">Mantenimiento de comunidades</h4><hr>
+                                            <p class="card-text">¿La puerta del edificio se queda abierta? 
+                                               ¿La llave no entra o no gira bien? Son situaciones habituales en las cominidades. <br> 
+                                               Llame para más información. </p>
+                                            <a href="tel:653576165" id="card-btn" class="btn btn-primary rounded mx-auto d-block" role="button">Llamar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                <span id="carouselControler" class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#demo" data-slide="next">
+                                <span id="carouselControler" class="carousel-control-next-icon"></span>
+                            </a>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección de Iconos -->
+        <section class="pb-2 pt-4 my5">
+            <div class="container">
+                <div class="row">
+                    <a class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-3">
+                        <i class="fas fa-award text-primary mx-auto d-block" style="font-size:48px"></i><br>
+                        <p class="text-center beauty-title text-dark">Profesionalidad<br>garantizada</p>
+                    </a>    
+                    <a class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-3">
+                        <i class="fas fa-car-side text-primary mx-auto d-block" style="font-size:48px"></i><br>
+                        <p class="text-center beauty-title text-dark">Desplazamientos<br>rápidos</p>
+                    </a>
+                    <a class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-3">
+                        <i class="far fa-clock text-primary mx-auto d-block" style="font-size:48px"></i><br>
+                        <p class="text-center beauty-title text-dark">Urgencias<br>24 horas</p>
+                    <a class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-3">
+                        <i class=" fas fa-euro-sign text-primary mx-auto d-block" style="font-size:48px"></i><br>
+                        <p class="text-center beauty-title text-dark">Precios<br>económicos</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
         <!-- Librerías javascript importadas -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
-
+        
+        <!-- Javascript propio -->
+        <script src="static/js/script.js"></script>
+        
     </body>
 
-    <footer class="bg-primary text-white fixed-bottom">
-            <marquee class="beauty-title"> </marquee>
+    <!-- Footer -->
+    <footer class="bg-primary p-0 mb-n5">
+        <h5 class="text-white text-center pt-3 pb-2 px-2">Contacte con nosotros por:</h5>
+        <div class="row mx-auto">
+            <a class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div id="tel-icon">
+                    <i class="fas fa-phone text-white mx-auto d-block" style="font-size:20px"></i>
+                    <p class="text-white text-center py-2 m-0">653 576 165</p>
+
+                </div>
+            </a> 
+            <a class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div id="mail-icon">
+                    <i class="fas fa-envelope text-white mx-auto d-block" style="font-size:20px"></i>
+                    <p class="text-white text-center py-2 m-0">info@idpcerrajero.com</p>
+                </div> 
+            </a>    
+        </div>
     </footer>
-    
+
 </html>

@@ -1,0 +1,274 @@
+
+/* Importar cosas de internet (variables, tipografías, fuentes, iconos, etc...). */
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600");
+
+/* Aquí dentro de root se crean las variables. */
+:root {
+    --my_primary:#e95420;
+    --my_secondary:#AEA79F;
+    --my_success: #38B44A;
+    --my_info: #17a2b8;
+    --my_warning: #EFB73E;
+    --my_danger: #DF382C;
+    --my_light: #e9ecef;
+    --my_dark: #4f4a51; 
+}
+
+/* Se sobreescriben las clases bg-color. */
+.bg-primary {
+    background-color: var(--my_primary) !important;
+}
+.bg-secondary {
+    background-color: var(--my_secondary) !important;
+}
+.bg-success {
+    background-color: var(--my_success) !important;
+}
+.bg-info {
+    background-color: var(--my_info) !important;
+}
+.bg-warning {
+    background-color: var(--my_warning) !important;
+}
+.bg-danger {
+    background-color: var(--my_danger) !important;
+}
+.bg-light {
+    background-color: var(--my_light) !important;
+}
+.bg-dark {
+    background-color: var(--my_dark) !important;
+}
+
+/* Se sobreescriben las clases text-color. */
+.text-primary {
+    color: var(--my_primary) !important;
+}
+.text-secondary {
+    color: var(--my_secondary) !important;
+}
+.text-success {
+    color: var(--my_success) !important;
+}
+.text-info {
+    color: var(--my_info) !important;
+}
+.text-warning {
+    color: var(--my_warning) !important;
+}
+.text-danger {
+    color: var(--my_danger) !important;
+}
+.text-light {
+    color: var(--my_light) !important;
+}
+.text-dark {
+    color: var(--my_dark) !important;
+}
+
+/* Se sobreescriben las clases border-color. */
+.border-primary {
+    border-color: var(--my_primary) !important;
+}
+.border-secondary {
+    border-color: var(--my_secondary) !important;
+}
+.border-success {
+    border-color: var(--my_success) !important;
+}
+.border-info {
+    border-color: var(--my_info) !important;
+}
+.border-warning {
+    border-color: var(--my_warning) !important;
+}
+.border-danger {
+    border-color: var(--my_danger) !important;
+}
+.border-light {
+    border-color: var(--my_light) !important;
+}
+.border-dark {
+    border-color: var(--my_dark) !important;
+}
+
+/* Se sobreescriben las clases btn-color */
+.btn-primary {
+    background-color: var(--my_primary) !important;
+}
+.btn-secondary {
+    background-color: var(--my_secondary) !important;
+}
+.btn-success {
+    background-color: var(--my_success) !important;
+}
+.btn-info {
+    background-color: var(--my_info) !important;
+}
+.btn-warning {
+    background-color: var(--my_warning) !important;
+}
+.btn-danger {
+    background-color: var(--my_danger) !important;
+}
+.btn-light {
+    background-color: var(--my_light) !important;
+}
+.btn-dark {
+    background-color: var(--my_dark) !important;
+}
+
+body{
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+#headerImage {
+    background-image:url(../imgs/bg_header_image.png);
+    background-size: cover;
+    width: 100%;
+    background-position: 50% 35%;
+    background-attachment: fixed local;
+
+}
+
+#card-btn {
+    width: 35%;
+}
+
+#carouselBg {
+    background-image: url(../imgs/bg_gradient.png) !important;
+
+}
+
+#tel-icon {
+    width: 25%;
+    float: right;
+
+}
+
+#mail-icon {
+    width: 25%;
+
+}
+
+
+.beauty-title {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+/* Media query (según el tamaño de la panti haz algo). */
+@media (max-width: 576px){
+    #accordion {
+        width: 100% !important;
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+
+        padding-top: 3em;
+    }
+
+}
+
+@media (max-width: 992px) {
+    #cabecera_num_tel {
+        display: none;
+    }
+    #accordion {
+        width: 100% !important;
+        padding-left: 10%;
+        padding-right: 10%;
+
+        padding-top: 3em;
+    }
+     #card-carousel {
+        width: 350px !important;
+    }
+
+    #headerBox {
+        padding-top: 0% !important;
+        padding-bottom: 0% !important;
+        margin: auto;
+        
+    }
+
+}
+
+@media (min-width: 992px) {
+    #accordion {
+        width: 65% !important;
+        padding-top: 1.5em;
+        
+    }
+    #boton-llamar {
+        display: none;
+    }
+    #card-btn {
+        display: none !important;
+        /* background-color: #38B44A !important; */
+    }
+    
+
+}
+
+@media (max-width: 1450px) {
+    #headerImage {
+        background-image:url(../imgs/bg_gradient.png);
+        background-size: cover;
+        width: 100%;
+        background-attachment: fixed local;
+    
+    } 
+    #tel-icon {
+        width: 50%;
+        float: right;
+    
+    }
+    
+    #mail-icon {
+        width: 50%;
+    
+    }
+}
+
+@media (max-width: 430px) {
+    #carouselControler {
+        background-color: var(--my_dark);
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
+    #tel-icon {
+        text-align: center;
+        margin: auto;
+        padding: 0%;
+        float: none;
+    
+    }
+    #mail-icon {
+        text-align: center;
+        margin: auto;
+        padding: 0%;
+    
+    }
+
+}
+
+.card-link {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
